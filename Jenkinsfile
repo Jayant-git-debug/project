@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build on Remote') {
       steps {
-        sshagent(['maven-build-key']) {
+        sshagent(['jenkins']) {
           sh '''
             ssh -o StrictHostKeyChecking=no jenkins@172.31.86.33 '
               rm -rf /home/maven/app &&
